@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Randomizer</title>
+    </head>
+    <style>
+        body {
+            background-color:#FFEF00;
+        }
+
+        button {
+            margin-top:10px;
+            background-color:black;
+            border-radius:30px;
+            width:250px;
+            height:50px;
+            color:white;
+        }
+    </style>
+    <body>
+        <section>
+            <center>
+                <h1>The person who is chosen for: </h1>
+                <h1 id="title">No Title</h1>
+                <h1>Is...</h1>
+                <h1 id="name">No Name</h1>
+
+            </center>
+        </section>
+        <section>
+            <center>
+                <a href="namerandomizer.html"><button><h3>Reroll</h3></button></a>
+                <a href="index.html"><button><h3>Go Back</h3></button></a>
+            </center>
+        </section>
+    </body>
+    <script>
+        const title = localStorage.getItem("nametitle") || "No Name" 
+        const name = localStorage.getItem("namechosen") || "No Name"
+
+        document.getElementById("name").innerText = localStorage.getItem("player")
+
+
+
+    </script>
+</html>

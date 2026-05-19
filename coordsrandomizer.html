@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Randomizer</title>
+    </head>
+    <style>
+        body {
+            background-color:green;
+        }
+
+        button {
+            margin-top:10px;
+            background-color:black;
+            border-radius:30px;
+            width:250px;
+            height:50px;
+            color:white;
+        }
+    </style>
+    <body>
+        <section>
+            <center>
+                <h1>Coordinate Generator</h1>
+                <b>Your to go Minecraft World meetup spot!</b>
+            </center>
+        </section>
+        <section>
+            <center>
+
+                <p id="no1"></p>
+                <button onclick="CreateCoords()">Generate Coordinate</button>
+                <a href="index.html"><button>Go Back</button></a>
+            </center>
+        </section>
+    </body>
+</html>
+<script>
+    function CreateCoords() {
+        const no1 = Math.floor(Math.random() * (999 - -999 + 1)) + -999 
+        const no2 = Math.floor(Math.random() * (999 - -999 + 1)) + -999
+        const no3 = Math.floor(Math.random() * (999 - -999 + 1)) + -999
+
+        no1 = no1
+
+        document.getElementById("no1").innerText = no1 + "," + no2 + "," + no3
+        
+    }
+</script>

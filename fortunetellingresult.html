@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Randomizer</title>
+    </head>
+    <style>
+        body {
+            background-color:purple;
+            color:white;
+        }
+
+        button {
+            margin-top:10px;
+            background-color:black;
+            border-radius:30px;
+            width:250px;
+            height:50px;
+            color:white;
+        }
+    </style>
+    <body>
+        <section>
+            <center>
+                <h1 id="title">No Title</h1>
+                <h1>Answer: </h1>
+                <h1 id="name">The ball refused to answer 🔮🙅</h1>
+
+            </center>
+        </section>
+        <section>
+            <center>
+                <a href="fortunetelling.html"><button><h3>Reroll</h3></button></a>
+                <a href="index.html"><button><h3>Go Back</h3></button></a>
+            </center>
+        </section>
+    </body>
+    <script>
+        const title = localStorage.getItem("fortune") || "The ball refused to answer 🔮🙅" 
+        const name = localStorage.getItem("fortunequestion") || "There seems to be nothing to ask to the ball..."
+
+        document.getElementById("title").innerText= name
+        document.getElementById("name").innerText = title
+
+
+
+    </script>
+</html>

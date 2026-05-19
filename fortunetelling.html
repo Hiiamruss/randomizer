@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Randomizer</title>
+    </head>
+    <style>
+        body {
+            background-color:purple;
+            color:white;
+        }
+
+        button {
+            margin-top:10px;
+            background-color:black;
+            border-radius:30px;
+            width:250px;
+            height:50px;
+            color:white;
+        }
+
+        input {
+            margin-top:10px;
+            background-color:gray;
+            border-radius:30px;
+            width:250px;
+            height:50px;
+            color:white;
+        }
+
+        input::placeholder {
+            color:white;
+        }
+
+
+    </style>
+    <body>
+        <section>
+            <center>
+                <h1>Fortune Telling (Ask the Crystal Ball 🔮)</h1>
+                <input type="text" placeholder="Enter Question (Ex. Will I get married? )" id="title">
+                <h3>---------------------------------------------------</h3>
+            </center>
+        </section>
+        <section>
+            <center>
+                <h1>🔮</h1>
+                <button onclick="GetResponse()"><h3>Ask the crystal ball.</h3></button>
+                <a href="index.html"><button><h3>Go Back</h3></button></a>
+                <p>This page of the app answers your biggest question with Yes, No, Maybe, Probably, Probably Not. So best of luck.</p>
+                <p style="color:red;">THE BALL NEVER LIES!</p>
+                <p>The ball refuses to answer, because the secrets are too deep to be true.</p>
+            </center>
+        </section>
+    </body>
+    <script>
+        function GetResponse() {
+            const answerlist = ["Yes", "No", "Maybe", "Probably", "Probably Not", "The ball refused to answer."]
+            let answer;
+
+            const question = document.getElementById("title").value;
+            
+            
+            const indx = Math.floor(Math.random() * answerlist.length)
+
+            if (question.includes("what") || question.includes("where") || question.includes("when") || question.includes("how") || question.includes("why") || question.includes("who")) {
+                answer = "The ball cannot answer questions that is not yes or no questions."
+            } else if (question.includes("russell") || question.includes("Russell")) {
+                answer = "The ball refuses to answer"
+            } else if (question.includes("Jesus") || question.includes("jesus")){
+                answer = "The ball refuses to answer religious based questions."
+            } else {
+                answer = answerlist[indx]
+            }
+
+    
+            
+            
+
+
+            localStorage.setItem("fortune", answer)
+            localStorage.setItem("fortunequestion", question)
+
+            window.location.href="fortunetellingresult.html"
+
+
+        }
+    </script>
+</html>
